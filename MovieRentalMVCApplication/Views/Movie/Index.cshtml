@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MovieRentalMVCApplication.Models.Movie>
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<button class=" btn btn-primary">@Html.ActionLink("New Movie", "New", null, new { style = "color: white; text-decoration:none" }) </button>
+
+<table class=" table  table-bordered table-striped">
+	<tr>
+		<th>Movie Name</th>
+		@*<th>Discount Rate</th>*@
+		<th>Genre Type</th>
+		<th>Release Date</th>
+	</tr>
+
+
+	@foreach (var c in Model)
+	{
+		<tr>
+
+			<td>@Html.ActionLink(c.MovieName, "Edit", c)</td>
+			@*<td>@c.MembershipType.DiscountRate%</td>*@
+			<td>@c.Genre.Name</td>
+			<td> @c.DateReleased</td>
+		</tr>
+	}
+</table>
+

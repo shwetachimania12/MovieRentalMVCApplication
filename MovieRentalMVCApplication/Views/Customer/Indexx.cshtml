@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MovieRentalMVCApplication.Models.Customer>
+	@{
+		ViewBag.Title = "Indexx";
+	}
+
+	<h2>Indexx</h2>
+	
+
+	<table class=" table  table-bordered table-striped">
+		<tr>
+			<th>Customer Name</th>
+			@*<th>Discount Rate</th>*@
+			<th>Membership Type</th>
+		</tr>
+
+
+		@foreach (var m in Model)
+		{
+			<tr>
+
+				<td>@Html.ActionLink(m.CustName, "Details", c)</td>
+				@*<td>@c.MembershipType.DiscountRate%</td>*@
+				<td>@m.MembershipType.Name</td>
+			</tr>
+		}
+	</table>
